@@ -1,0 +1,58 @@
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.splash {
+	height: 100vh;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background: rgba(38, 38, 38, 0.9);
+}
+
+.vertical-center {
+	min-height: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.w-60 {
+  width: 60% !important;
+}
+
+.bg-1 {
+	border-top: 25vh;
+	background: rgba(38, 38, 38, 0.8);
+	padding-bottom: 3rem !important;
+}
+
+.ox-header {
+	color: 	#1db954;
+	font-family: 'Proxima Nova', Georgia, sans-serif;
+	font-weight: lighter;
+	font-size: 60px;
+	letter-spacing: 3px;
+}
+
+.spotify-logo {
+	max-height: 60px;
+	max-width: 60px;
+}
+
+.bg-shadow {
+  background-color: rgba(38, 38, 38, 0.85) !important;
+}
+
+.made-by {
+	background: rgba(38, 38, 38, 0.9);
+	color: #1db954;
+	padding-bottom: 0.5rem;
+}

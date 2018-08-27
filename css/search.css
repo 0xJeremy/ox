@@ -1,0 +1,35 @@
+.bg-1 {
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-repeat:no-repeat;
+	background: rgba(38, 38, 38, 0.9);
+}
+
+.ox-header {
+	color: 	#1db954;
+	font-family: 'Proxima Nova', Georgia, sans-serif;
+	font-weight: lighter;
+	font-size: 60px;
+	letter-spacing: 3px;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.spotify-logo {
+	max-height: 60px;
+	max-width: 60px;
+}
+
+.row {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+
+.made-by {
+	background: rgba(38, 38, 38, 0.9);
+	color: #1db954;
+	padding-top: 1rem;
+	padding-bottom: 0.5rem;
+}
