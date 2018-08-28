@@ -1,30 +1,37 @@
 function get_songs(song) {
-	var xmlhttp = new XMLHttpRequest();
-	xmlhttp.onreadystatechange = function() {
-		if(this.readyState == 4 && this.status == 200) {
-			var jsonData = JSON.parse(this.responseText);
-			ready_data = display_data(jsonData);
-		}
-	}
-	var options = {
-      url: "https://api.spotify.com/v1/search?q=" + song + "&type=track",
-      headers: {
-        'Authorization': 'Bearer ' + 'BQAvuOOjUFD3ndYI8c6DMEwU3OiUlpU13c0uOgKJ8Pw60IqLhUQ2e6VOUsTyU1N7H1zMmhHCdsFLwFqu3eHhzItZDcuzISYc9Q2L8fa'
-      },
-      json: true
-    };
-	search_url = "https://api.spotify.com/v1/search?q=" + song + "&type=track";
-	xmlhttp.open('GET', options, true);
-	xmlhttp.send();
+
+	var token = 'BQB9ScredgbZWqtP4yU65aGEAjk4BxnvgXRKdkckCDglYb8nFQRm1iG6fRMFURIszYXq5nYv3A_l2tXV6hCMADQIWz6mp_qxuFpkN_S4eBVbArIqTaLIi3uo4A6uXmTxoq-W1uM-O85TcB5D-24chZyNoCznZFNE3QtotrFPO_LFxkBKEr2tfvvKITwRJyH3_OIPBrbWlPYYkNJ9CoCqUVd3SSebPy4lQnw4vGsqy6j-hGpF6bIQr39dLlJgm5vMbbUuZBKGMjZk';
+
+	$.ajax({
+        url: 'https://api.spotify.com/v1/search?type=artist&query=beatles', //'https://api.spotify.com/v1/search?q=' + song + '&type=track',
+      	dataType: 'JSONP',
+     	headers: {
+        	Authorization: 'Bearer ' + token
+      	}
+    })
+    .then(function(oData) {
+    	console.log(oData);
+    })
+
+	// var xmlhttp = new XMLHttpRequest();
+	// xmlhttp.onreadystatechange = function() {
+	// 	if(this.readyState == 4 && this.status == 200) {
+	// 		var jsonData = JSON.parse(this.responseText);
+	// 		ready_data = display_data(jsonData);
+	// 	}
+	// }
+	// search_url = "https://api.spotify.com/v1/search?q=" + song + "&type=track";
+	// xmlhttp.open('GET', search_url, true);
+	// xmlhttp.send();
 }
 
 function display_data(jsonData) {
 	console.log(jsonData)
-	for(var i in jsonData) {
-		var div = document.createElement('div');
-    	div.innerHTML = gen_card(i);
-    	document.getElementById('song-cards').appendChild(div);
-	}
+	// for(var i in jsonData) {
+	// 	var div = document.createElement('div');
+ //    	div.innerHTML = gen_card(i);
+ //    	document.getElementById('song-cards').appendChild(div);
+	// }
 }
 
 function gen_card(jsonData) {
@@ -43,5 +50,5 @@ function gen_text(song, artist) {
 	return text;
 }
 
-song = "Day Tripper";
+song = "day tripper";
 get_songs(song)
